@@ -11,7 +11,9 @@ function init() {
   headerBlockContentEl.className = `${styles.root} ${headerBlockContentEl.className}`;
   headerEl.parentElement.removeChild(headerEl);
   headerBlockContentEl.childNodes.forEach(node => headerBlockContentEl.removeChild(node));
-  headerContentEl.childNodes.forEach(node => headerBlockContentEl.appendChild(node.cloneNode(true)));
+  headerContentEl.childNodes
+    .filter(node => node.tagName !== 'DIV')
+    .forEach(node => headerBlockContentEl.appendChild(node.cloneNode(true)));
   firstBlockContentEl.parentElement.insertBefore(headerBlockContentEl, firstBlockContentEl);
 }
 
