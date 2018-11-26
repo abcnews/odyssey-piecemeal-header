@@ -7,13 +7,12 @@ function init() {
   const firstBlockContentEl = firstBlockEl.querySelector('.Block-content');
   const headerBlockContentEl = firstBlockContentEl.cloneNode(true);
 
-  headerBlockContentEl.innrHTML = '';
+  headerBlockContentEl.innerHTML = '';
   headerBlockContentEl.className = `${styles.root} ${headerBlockContentEl.className}`;
   headerEl.parentElement.removeChild(headerEl);
-  headerBlockContentEl.childNodes.forEach(node => headerBlockContentEl.removeChild(node));
-  headerContentEl.childNodes
-    .filter(node => node.tagName !== 'DIV')
-    .forEach(node => headerBlockContentEl.appendChild(node.cloneNode(true)));
+  Array.prototype.slice
+    .call(headerContentEl.childNodes)
+    .forEach(node => node.tagName !== 'DIV' && headerBlockContentEl.appendChild(node.cloneNode(true)));
   firstBlockContentEl.parentElement.insertBefore(headerBlockContentEl, firstBlockContentEl);
 }
 
