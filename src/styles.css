@@ -1,6 +1,7 @@
 .root {
 }
 
-.root > p {
-  font-size: 1.125rem !important;
+.root p:not(:global(.Header-miscEl)) {
+  margin-bottom: 0.75rem;
+  font-size: 1rem !important;
 }
