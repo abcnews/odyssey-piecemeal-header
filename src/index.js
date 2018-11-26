@@ -16,4 +16,6 @@ function init() {
   firstBlockContentEl.parentElement.insertBefore(headerBlockContentEl, firstBlockContentEl);
 }
 
-window.__ODYSSEY__ ? init() : window.addEventListener('odyssey:api', init);
+if (window.matchMedia('(min-width: 61.25rem)').matches) {
+  window.__ODYSSEY__ ? init() : window.addEventListener('odyssey:api', init);
+}
