@@ -1,0 +1,23 @@
+{
+  "name": "odyssey-piecemeal-header",
+  "version": "1.0.0-pre",
+  "description": "A project generated from aunty's basic app template.",
+  "license": "MIT",
+  "private": true,
+  "contributors": [
+    "Colin Gourlay <Gourlay.Colin@abc.net.au>"
+  ],
+  "aunty": {
+    "type": "basic",
+    "devServer": {
+      "hot": false
+    }
+  },
+  "scripts": {
+    "start": "aunty serve",
+    "test": "aunty test"
+  },
+  "devDependencies": {
+    "@abcnews/aunty": "^9.10.0"
+  }
+}
