@@ -1,7 +1,33 @@
-.root {
+.hasOdysseyPiecemealHeader [data-component='Masthead'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.root p:not(:global(.Header-miscEl)) {
-  margin-bottom: 0.75rem;
+@media (min-height: 40rem) {
+  .root {
+    height: 100vh;
+  }
+}
+
+:global(.Block) > .root:global(.Block-content):nth-child(2) > h1 {
+  /* ^^^ specificity is required for override ^^^ */
+  margin-top: 40vh !important;
+}
+
+.root > p {
+  padding-top: 0;
+}
+
+.root > p:global(.Header-miscEl) {
+  font-size: 1.25rem !important;
+}
+
+.root > p:not(:global(.Header-miscEl)) {
   font-size: 1rem !important;
+}
+
+.root > p:global(.Header-byline):not(:last-child) {
+  padding-bottom: 0;
 }

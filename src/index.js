@@ -8,12 +8,13 @@ function init() {
   const headerBlockContentEl = firstBlockContentEl.cloneNode(true);
 
   headerBlockContentEl.innerHTML = '';
-  headerBlockContentEl.className = `${styles.root} ${headerBlockContentEl.className}`;
+  headerBlockContentEl.className = `${headerBlockContentEl.className} ${styles.root}`;
   headerEl.parentElement.removeChild(headerEl);
   Array.prototype.slice
     .call(headerContentEl.childNodes)
     .forEach(node => node.tagName !== 'DIV' && headerBlockContentEl.appendChild(node.cloneNode(true)));
   firstBlockContentEl.parentElement.insertBefore(headerBlockContentEl, firstBlockContentEl);
+  document.documentElement.classList.add(styles.hasOdysseyPiecemealHeader);
 }
 
 if (window.matchMedia('(min-width: 61.25rem)').matches) {
