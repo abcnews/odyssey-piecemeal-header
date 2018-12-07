@@ -1,11 +1,32 @@
-.hasOdysseyPiecemealHeader [data-component='Masthead'] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+@media (min-width: 61.25rem) {
+  :global(#abcHeader.global) + [data-presentation-layer-async-component],
+  :global(#abcHeader.global) + [data-component='App'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  :global(.Header) {
+    display: none;
+  }
+
+  :global(.Header) + :global(.Block) {
+    margin-top: 0 !important;
+  }
 }
 
-@media (min-height: 40rem) {
+@media (max-width: 61.1875rem) {
+  .root {
+    display: none !important;
+  }
+
+  .root.root + :global(.Block-content) > :first-child {
+    margin-top: 80vh !important;
+  }
+}
+
+@media (min-width: 61.25rem) and (min-height: 40rem) {
   .root {
     height: 100vh;
   }
