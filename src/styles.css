@@ -1,6 +1,7 @@
 @media (min-width: 61.25rem) {
   :global(#abcHeader.global) + [data-presentation-layer-async-component],
-  :global(#abcHeader.global) + [data-component='App'] {
+  :global(#abcHeader.global) + [data-component='App'],
+  :global(.masthead-container) > [data-component='App'] {
     position: absolute;
     top: 0;
     left: 0;
